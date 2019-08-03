@@ -9,7 +9,7 @@ import sys
 def sockMerchant(n, ar):
     pairs = 0
     colors = set()
-    for val in ar: 
+    for val in ar:
         if not val in colors:
             colors.add(val)
         else:
