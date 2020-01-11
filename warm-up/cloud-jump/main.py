@@ -1,10 +1,7 @@
 #!/bin/python3
 
-import math
-import os
-import random
-import re
-import sys
+import unittest
+
 
 # Complete the jumpingOnClouds function below.
 def jumpingOnClouds(c, n):
@@ -12,21 +9,17 @@ def jumpingOnClouds(c, n):
     while position < n - 1:
         if position + 2 < n and c[position + 2] != 1:
             position += 1
-        moves +=1
+        moves += 1
         position += 1
     return moves
 
     #    if position + 2 < n and c[position + 2] == 1:
 
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-    n = int(input())
+class Tests(unittest.TestCase):
+    def test1(self):
+        self.assertEqual(jumpingOnClouds([0, 0, 1, 0, 0, 1, 0], 7), 4)
 
-    c = list(map(int, input().rstrip().split()))
 
-    result = jumpingOnClouds(c, n)
-
-    fptr.write(str(result) + '\n')
-
-    fptr.close()
+if __name__ == "__main__":
+    unittest.main()
